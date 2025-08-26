@@ -1,4 +1,4 @@
-# Groq Translate Discord Bot
+# Groq Translate Discord Bot(自分用)
 
 ## 概要
 Groq APIとDiscordを連携した多言語翻訳Botです。スラッシュコマンドでテキストを翻訳し、ユーザーごとにターゲット言語を設定できます。GPT-5を使用して作ったbotです。
@@ -38,4 +38,5 @@ Groq APIとDiscordを連携した多言語翻訳Botです。スラッシュコ�
 
 ## ライセンス
 MIT
+
 
