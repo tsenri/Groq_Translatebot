@@ -44,7 +44,7 @@ function detectLang(s) {
 const userTarget = new Map(); // userId -> 'ja'|'en'|'ko'|'zh'
 const getTarget = (uid) => userTarget.get(uid) || 'en';
 
-// スラッシュコマンド
+// スラッシュコマンド一覧
 const commands = [
   new SlashCommandBuilder()
     .setName('translate')
@@ -119,4 +119,5 @@ client.on('interactionCreate', async (interaction) => {
 });
 
 client.login(process.env.DISCORD_TOKEN);
+
 
