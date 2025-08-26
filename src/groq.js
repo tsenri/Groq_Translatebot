@@ -2,7 +2,7 @@ import 'dotenv/config';
 import Groq from 'groq-sdk';
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
-const GROQ_MODEL = process.env.GROQ_MODEL || 'openai/gpt-oss-120b';
+const GROQ_MODEL = process.env.GROQ_MODEL;
 
 export async function translateText(text, targetLang) {
 	const res = await groq.chat.completions.create({
@@ -20,3 +20,4 @@ export async function translateText(text, targetLang) {
 	});
 	return res.choices?.[0]?.message?.content?.trim() ?? '';
 }
+
