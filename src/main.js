@@ -18,23 +18,23 @@ const NORMALIZE = (s) => {
 function detectLang(s) {
   // JA: ひらがな/カタカナ/半角ｶﾅ/拡張
   const hasJa =
-    /[\u3040-\u309F]/.test(s) ||    // ひらがな
-    /[\u30A0-\u30FF]/.test(s) ||    // カタカナ
-    /[\uFF66-\uFF9F]/.test(s) ||    // 半角カナ
-    /[\u31F0-\u31FF]/.test(s);      // カタカナ拡張
+    /[\u3040-\u309F]/.test(s) ||
+    /[\u30A0-\u30FF]/.test(s) ||
+    /[\uFF66-\uFF9F]/.test(s) ||
+    /[\u31F0-\u31FF]/.test(s);
 
   // KO: ハングル
   const hasKo =
-    /[\u1100-\u11FF]/.test(s) ||    // 字母
-    /[\u3130-\u318F]/.test(s) ||    // 互換
-    /[\uAC00-\uD7A3]/.test(s);      // 音節
+    /[\u1100-\u11FF]/.test(s) ||
+    /[\u3130-\u318F]/.test(s) ||
+    /[\uAC00-\uD7A3]/.test(s);
 
   // ZH: CJK（漢字）※かな/カナ含む
   const hasZh =
-    /[\u4E00-\u9FFF]/.test(s) ||    // 統合漢字
-    /[\u3400-\u4DBF]/.test(s);      // 拡張A
+    /[\u4E00-\u9FFF]/.test(s) ||
+    /[\u3400-\u4DBF]/.test(s);
 
-  if (hasJa) return 'ja';           // ← ここを最優先にする
+  if (hasJa) return 'ja';
   if (hasKo) return 'ko';
   if (hasZh) return 'zh';
   return 'en';
@@ -44,7 +44,7 @@ function detectLang(s) {
 const userTarget = new Map(); // userId -> 'ja'|'en'|'ko'|'zh'
 const getTarget = (uid) => userTarget.get(uid) || 'en';
 
-// スラッシュコマンド定義（/target に choices を付けてタイプミス防止）
+// スラッシュコマンド
 const commands = [
   new SlashCommandBuilder()
     .setName('translate')
@@ -119,3 +119,4 @@ client.on('interactionCreate', async (interaction) => {
 });
 
 client.login(process.env.DISCORD_TOKEN);
+
