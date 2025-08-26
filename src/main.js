@@ -29,7 +29,7 @@ function detectLang(s) {
     /[\u3130-\u318F]/.test(s) ||
     /[\uAC00-\uD7A3]/.test(s);
 
-  // ZH: CJK（漢字）※かな/カナ含む
+  // ZH: CJK（漢字）※かな/カナを含む
   const hasZh =
     /[\u4E00-\u9FFF]/.test(s) ||
     /[\u3400-\u4DBF]/.test(s);
@@ -119,5 +119,6 @@ client.on('interactionCreate', async (interaction) => {
 });
 
 client.login(process.env.DISCORD_TOKEN);
+
 
 
