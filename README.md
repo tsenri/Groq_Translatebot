@@ -12,11 +12,11 @@ GroqAPIとDiscordを連携した4ヵ国語翻訳Bot(日本語・中国語・英�
 - Groq APIの訳文のみを表示、ラベルはBot側で固定
 
 ## 使い方
-1. `.env` ファイルに以下を記述
+1. `.env.exanple` を`.env`にリネームし、ファイルに以下を記述
    ```
    GROQ_API_KEY = GroqのAPIキー
    DISCORD_TOKEN = Discord Botトークン
-   MODEL = 推奨モデル名
+   MODEL = モデル名
    ```
 2. 依存パッケージをインストール
    ```
@@ -27,6 +27,11 @@ GroqAPIとDiscordを連携した4ヵ国語翻訳Bot(日本語・中国語・英�
    npm start
    ```
 4. Discordで `/target` で言語を設定し、`/translate` で翻訳
+
+5. もしもAPIエラーが発生した場合、ターミナルで以下のように設定してから実行してください
+    ```
+    $env:GROQ_API_KEY = "YOUR_API_KEY"
+    ```
 
 ## コマンド例
 - `/target lang:ja` → ターゲット言語を日本語に設定
@@ -39,6 +44,7 @@ GroqAPIとDiscordを連携した4ヵ国語翻訳Bot(日本語・中国語・英�
 
 ## ライセンス
 MIT
+
 
 
 
